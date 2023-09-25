@@ -12,10 +12,7 @@ struct ContentView: View {
        
        var body: some View {
            ZStack {
-               AppCoordinator<RepoListCoordinator>(rootCoordinator: {
-                   RepoListCoordinator(navigation: AppNavigation.root, username: "Asdf")
-               })
-               
+              
            }
        }
 }

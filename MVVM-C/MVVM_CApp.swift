@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct MVVM_CApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppContentView(navigation: AppNavigation(rootView: AnyView(Text("Text"))))
         }
     }
 }

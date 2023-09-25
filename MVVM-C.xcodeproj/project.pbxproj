@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495F4F332AC1A57F00F09A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F4F322AC1A57F00F09A13 /* AppDelegate.swift */; };
+		495F4F352AC1A59C00F09A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495F4F342AC1A59C00F09A13 /* SceneDelegate.swift */; };
 		49A8E2F52ABAB294006E702C /* RepoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8E2F42ABAB294006E702C /* RepoListCoordinator.swift */; };
 		49A8E2F82ABAB315006E702C /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8E2F72ABAB315006E702C /* RepoListView.swift */; };
 		49A8E2FA2ABAB32E006E702C /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8E2F92ABAB32E006E702C /* RepoListViewModel.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		495F4F322AC1A57F00F09A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		495F4F342AC1A59C00F09A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49A8E2F42ABAB294006E702C /* RepoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListCoordinator.swift; sourceTree = "<group>"; };
 		49A8E2F72ABAB315006E702C /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
 		49A8E2F92ABAB32E006E702C /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				49C5BE322AB9B2EB00F6834F /* Assets.xcassets */,
 				49C5BE342AB9B2EB00F6834F /* MVVM_C.entitlements */,
 				49C5BE352AB9B2EB00F6834F /* Preview Content */,
+				495F4F322AC1A57F00F09A13 /* AppDelegate.swift */,
+				495F4F342AC1A59C00F09A13 /* SceneDelegate.swift */,
 			);
 			path = "MVVM-C";
 			sourceTree = "<group>";
@@ -414,6 +420,8 @@
 				49C5BE312AB9B2EA00F6834F /* ContentView.swift in Sources */,
 				49C5BE2F2AB9B2EA00F6834F /* MVVM_CApp.swift in Sources */,
 				49A8E2F82ABAB315006E702C /* RepoListView.swift in Sources */,
+				495F4F352AC1A59C00F09A13 /* SceneDelegate.swift in Sources */,
+				495F4F332AC1A57F00F09A13 /* AppDelegate.swift in Sources */,
 				49A8E30C2ABAB7F6006E702C /* NetworkUtils.swift in Sources */,
 				49A8E3012ABAB3F6006E702C /* User.swift in Sources */,
 				49A8E2FA2ABAB32E006E702C /* RepoListViewModel.swift in Sources */,

@@ -7,42 +7,62 @@
 
 import SwiftUI
 
-protocol BaseCoordinator: View {
-    var navigation: AppNavigation { get}
+protocol BaseCoordinator {
+    var navigation: NavigationRoute { get}
+    func start()
+    func finish()
 }
 
-struct AppCoordinator<Coordinator: BaseCoordinator>: BaseCoordinator {
-    @StateObject var navigation: AppNavigation = AppNavigation.root
-    var rootCoordinator: Coordinator?
+struct AppCoordinator: BaseCoordinator {
+    var navigation: NavigationRoute
     
-    init(@ViewBuilder rootCoordinator: () -> Coordinator) {
-            self.rootCoordinator = rootCoordinator()
-        }
+    init(navigation: NavigationRoute) {
+        self.navigation = navigation
+    }
+    
+    func start() {
+        
+    }
+    
+    func finish() {
+        
+    }
+
+}
+
+struct AppContentView: View {
+    @StateObject var navigation: AppNavigation
+ 
     
     var body: some View {
-        NavigationStack(path: $navigation.screens, root: {
-            VStack {
-            
-                self.rootCoordinator
-            }
-                .navigationDestination(for: NavigationView.self) { value in
-                    value.view
+       
+            NavigationStack(path: $navigation.screens, root: {
+                VStack {
+                    navigation.rootView
                 }
-        })
+                    .navigationDestination(for: NavigationView.self) { value in
+                        value.view
+                    }
+            })
+       
     }
 }
 
 
 protocol NavigationRoute {
-    
+    var rootView: AnyView? { get set}
     func push(_ view: NavigationView)
     func pop()
 }
 
 class AppNavigation: NavigationRoute, ObservableObject {
-    static let root = AppNavigation()
-   @Published var screens: [NavigationView] = [NavigationView(view: AnyView(Text("RAMMAMA")))]
+    @Published var rootView: AnyView?
+    @Published var screens: [NavigationView]
     
+    init(rootView: AnyView? = nil, screens: [NavigationView] = []) {
+        self.rootView = rootView
+        self.screens = screens
+    }
     
     func push(_ view: NavigationView) {
         print("Pushed")
