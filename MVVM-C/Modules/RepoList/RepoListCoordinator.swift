@@ -8,42 +8,21 @@
 import SwiftUI
 
 struct RepoListCoordinator: BaseCoordinator {
-    @State private var selectedRepo: Repo?
-     @State private var isProfilePresented = false
-     
-     @Environment(\.openURL) var openURL
-     
+    var navigation: AppNavigation
      let username: String
      
      var body: some View {
          VStack {
              RepoListView(tapOnRepoAction: { repo in
-                 selectedRepo = repo
+                 navigation.push(NavigationView(view: AnyView(Text("Ram"))))
              })
-             .listStyle(PlainListStyle())
-             .navigationBarTitle("\(username)'s repos", displayMode: .inline)
-             .navigationBarItems(trailing: Button(action: {
-                 isProfilePresented = true
-             }, label: {
-                 Image(systemName: "person.crop.circle")
-             }))
-             
-             if let selectedRepo = selectedRepo {
-//                 EmptyNavigationLink(destination: RepoDetailsView(inputRepo: selectedRepo, tapOnLinkAction: tapOnLinkAction), selectedItem: $selectedRepo)
-             }
          }
-         .fullScreenCover(isPresented: $isProfilePresented, content: {
-//             ProfileCoordinator(username: username)
-         })
      }
-     
-     private func tapOnLinkAction(url: URL) {
-         openURL(url)
-     }
+  
 }
 
 struct RepoListCoordinator_Previews: PreviewProvider {
     static var previews: some View {
-        RepoListCoordinator(username: "sdfg")
+        RepoListCoordinator(navigation: AppNavigation(), username: "sdfg")
     }
 }
